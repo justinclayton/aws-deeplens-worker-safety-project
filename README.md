@@ -73,7 +73,7 @@ Follow the modules below or refer to the online course to learn how to build the
 
 * Name: worker-safety-cloud
 * Runtime: Python 3.7
-* Role: Choose an existing role
+* Execution Role: Choose "Use an existing role"
 * Existing role: RecognizeObjectLambdaRole
 * Click Create function
 
@@ -82,44 +82,44 @@ Follow the modules below or refer to the online course to learn how to build the
 * Key: iot_topic
 * Value: worker-safety-demo-cloud
 
-1. Download [lambda.zip](./code/lambda.zip).
+1. Download the function code via this link: [lambda.zip](./code/lambda.zip).
 2. Under Function code:
 
 * Code entry type: Upload a zip file
 * Under Function package, click Upload and select the zip file you downloaded in earlier step.
 * Click Save.
 
-1. Under Add triggers, select S3.
+1. Back at the top in the Designer section, click "Add trigger", then select S3.
 2. Under Configure triggers:
 
 * Bucket: Select the S3 bucket you just created in earlier step.
-* Event type: Leave default Object Created (All)
+* Event type: Leave default (All object create events)
 * Leave defaults for Prefix and Suffix and make sure Enable trigger checkbox is checked.
 * Click Add.
-* Click Save on the top right to save the changes to the Lambda function.
 
 ### Create an AWS DeepLens inference Lambda function
 
-1. Go to AWS Lambda in AWS Console at https://console.aws.amazon.com/lambda/.
+1. Go to AWS Lambda in the AWS Console at https://console.aws.amazon.com/lambda/.
 2. Click on Create function.
-3. Under Create function, select Blueprints.
+3. Under Create function, select "Use a blueprint".
 4. Under Blueprints, type greengrass and hit enter to filter blueprint templates.
 5. Select greengrass-hello-world and click Configure.
 6. Under Basic information, provide the following details:
 
-* Name: name-worker-safety-deeplens (example: kashif-worker-safety-deeplens)
-* Role: Choose and existing role
+* Function name: name-worker-safety-deeplens (example: kashif-worker-safety-deeplens)
+* Execution Role: Choose "Use an existing role"
 * Existing role: DeepLensInferenceLambdaRole
 * Click Create function.
 
-1. Copy the code from [deeplens-lambda.py](./code/deeplens-lambda.py) and paste it under the Function code for the Lambda function. 
-2. Go to line 34 and modify the line below with the name of your S3 bucket created in the earlier step.
+1. Go to this [deeplens-lambda.py](./code/deeplens-lambda.py) in another tab, click the "Raw" button, then select all and copy the code to your clipboard.
+2. Go back to your Lambda function configuration tab and paste the code under the Function code section, overwriting greengrassHelloWorld.py.
+3. Go to line 34 and modify the line below with the name of your S3 bucket created in the earlier step.
 
 * bucket_name = "REPLACE-WITH-NAME-OF-YOUR-S3-BUCKET"
 
 1. Click Save.
 2. Click on Actions, and then "Publish new version".
-3. For Version description enter: Detect a person and push frame to S3 bucket. and click Publish.
+3. For Version description enter: "Detect a person and push frame to S3 bucket.", then click Publish.
 
 ### Create an AWS DeepLens project
 
