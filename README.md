@@ -149,8 +149,9 @@ Follow the modules below or refer to the online course to learn how to build the
 ### View output in AWS IoT
 
 1. Go to AWS IoT console at https://console.aws.amazon.com/iot/home
-2. Under Subscription topic, enter the topic name that you entered as an environment variable for the Lambda function you created in the earlier step (example: worker-safety-demo-cloud) and click Subscribe to topic.
-3. You should now see JSON message with a list of people detected and whether they are wearing safety hats or not.
+2. In the left-hand sidebar, click "Test".
+3. Under Subscription topic, enter the topic name that you entered as an environment variable for the Lambda function you created in the earlier step (example: worker-safety-demo-cloud) and click Subscribe to topic.
+4. You should now see JSON message with a list of people detected and whether they are wearing safety hats or not.
 
 ### View output in Amazon CloudWatch
 
